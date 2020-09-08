@@ -28,6 +28,24 @@ Now the following situations arise.
     \item If there is at least one element (which we can call $c$), we can choose $U = \left(-\infty,\ c\right)$ and $V = \left(c,\ \infty\right)$.
 \end{itemize}
 In either case, $U$ is a neighborhood of $a$ and $V$ is a neighborhood of $b$, since open rays are open. Furthermore, their intersection is empty. We can conclude then that $Y$ is Hausdorff.
+\subsection*{Proving continuity}
+It is easy to see that the definition of $h$ is equivalent to this one.
+\begin{equation*}
+    h(x) = \left\{
+        \begin{array}{ll}
+        f(x) & \mathrm{if\ } x \in A = \left\{x \mid f(x) \leq g(x)\right\} \\
+        g(x) & \mathrm{if\ } x \in B = \left\{x \mid g(x) \leq f(x)\right\} \\
+        \end{array}
+    \right.
+\end{equation*}
+We can now check that all conditions of the pasting lemma are satified.
+\begin{gather*}
+    \text{$A$ and $B$ are closed} \\
+    X = A \cup B  \\
+    \text{$f$ and $g$ are continuous} \\
+    \forall x \in A \cap B,\ f(x) = g(x)
+\end{gather*}
+Thus, we can conclude that $h$ is continuous.
 \section*{19.3}
 If each $X_\alpha$ is a Hausdorff space, then $\prod X_\alpha$ is a Hausdorff space in both the box and product topologies.
 \end{document}
