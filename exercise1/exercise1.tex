@@ -17,6 +17,17 @@ Let $Y$ be an ordered set in the order topology. Let $f,\ g \colon X \rightarrow
     \end{equation*}
     Show that $h$ is continuous.
 \end{enumerate}
+\subsection*{Every order topology is Hausdorff}
+First of all, we will proof that $Y$ is indeed Hausdorff. Given two elements $a,\ b \in Y$ such that $a < b$, we can consider the following set.
+\begin{equation*}
+    S = \left\{x \mid a < x < b\right\}
+\end{equation*}
+Now the following situations arise.
+\begin{itemize}
+    \item If S is empty, we can choose $U = \left(-\infty,\ b\right)$ and $V = \left(a,\ \infty\right)$.
+    \item If there is at least one element (which we can call $c$), we can choose $U = \left(-\infty,\ c\right)$ and $V = \left(c,\ \infty\right)$.
+\end{itemize}
+In either case, $U$ is a neighborhood of $a$ and $V$ is a neighborhood of $b$, since open rays are open. Furthermore, their intersection is empty. We can conclude then that $Y$ is Hausdorff.
 \section*{19.3}
 If each $X_\alpha$ is a Hausdorff space, then $\prod X_\alpha$ is a Hausdorff space in both the box and product topologies.
 \end{document}
