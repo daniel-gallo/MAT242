@@ -1,5 +1,6 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{bm}
 
 \title{Exercise 1}
 \author{Daniel Gallo}
@@ -52,4 +53,18 @@ We can now check that all conditions of the pasting lemma are satified.
 Thus, we can conclude that $h$ is continuous.
 \section*{19.3}
 If each $X_\alpha$ is a Hausdorff space, then $\prod X_\alpha$ is a Hausdorff space in both the box and product topologies.
+\\
+Given $\bm{a} \neq \bm{b}$, there is a $\beta$ such that $\bm{a}_\beta \neq \bm{b}_\beta$. Since $X_\beta$ is Hausdorff, we can find $U_\beta$ and $V_\beta$, neighborhoods of $\bm{a}_\beta$ and $\bm{b}_\beta$, where $U_\beta \cap V_\beta = \emptyset$. Now, we can define $U = \prod{U_\alpha}$ and $V = \prod{V_\alpha}$ as follows:
+\begin{equation*}
+    U_\alpha = \begin{cases}
+        U_\beta  & \text{if } \alpha = \beta \\
+        X_\alpha & \text{if } \alpha \neq \beta
+    \end{cases}
+    \qquad
+    V_\alpha = \begin{cases}
+        V_\beta  & \text{if } \alpha = \beta \\
+        X_\alpha & \text{if } \alpha \neq \beta
+    \end{cases}
+\end{equation*}
+$U$ and $V$ are neighborhoods of $\bm{x}$ and $\bm{y}$, and they are disjoint in both the box topology and the product topology. Since we can find a separation between different points, we can conclude that $\prod X_\alpha$ is Hausdorff.
 \end{document}
