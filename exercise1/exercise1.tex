@@ -1,6 +1,7 @@
 \documentclass{article}
 \usepackage{amsmath}
 \usepackage{bm}
+\usepackage{graphicx}
 
 \title{Exercise 1}
 \author{Daniel Gallo}
@@ -32,6 +33,7 @@ In either case, $U$ is a neighborhood of $a$ and $V$ is a neighborhood of $b$, s
 \subsection*{Proving the complement is open}
 As we usually do, instead of proving that $\left\{x \mid f(x) \leq g(x)\right\}$ is closed we will prove that its complement, which we can call $W$ is open. To do so, we will show that for every $x \in W$ there exists an open set inside of $W$ containing $x$. $W$ will be open since it will be a union of open sets $W = \bigcup\limits_{x \in W}W_x$. 
 \\
+\includegraphics[width=\textwidth]{diagram.png}
 Let $x \in W$, that is $f(x) > g(x)$. Since $Y$ is a Hausdorff space, there are disjoint neighborhoods of $f(x)$ and $g(x)$, $U$ and $V$. Since $f$ and $g$ are continuous functions, we know that $f^{-1}(U)$ and $g^{-1}(V)$ are open and both of them contain $x$. The intersection, $W_x = f^{-1}(U) \cap g^{-1}(V)$, will be open and nonempty, and we know that $f(x') \in U$ and $g(x') \in V$ for every $x' \in W_x$. Every element in $U$ is bigger than every element of $V$, and thus we can conclude that $W_x \in W$.
 \subsection*{Proving continuity}
 It is easy to see that the definition of $h$ is equivalent to this one.
