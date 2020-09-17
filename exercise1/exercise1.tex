@@ -34,7 +34,7 @@ In either case, $U$ is a neighborhood of $a$ and $V$ is a neighborhood of $b$, s
 As we usually do, instead of proving that $\left\{x \mid f(x) \leq g(x)\right\}$ is closed we will prove that its complement, which we can call $W$ is open. To do so, we will show that for every $x \in W$ there exists an open set $W_x \subseteq W$ containing $x$. $W$ will be open since it will be a union of open sets $W = \bigcup\limits_{x \in W}W_x$. 
 \\
 \includegraphics[width=\textwidth]{diagram.png}
-Let $x \in W$, that is $f(x) > g(x)$. Since $Y$ is a Hausdorff space, there are disjoint neighborhoods of $f(x)$ and $g(x)$, $U$ and $V$. Since $f$ and $g$ are continuous functions, we know that $f^{-1}(U)$ and $g^{-1}(V)$ are open and both of them contain $x$. The intersection, $W_x = f^{-1}(U) \cap g^{-1}(V)$, will be open and nonempty, and we know that $f(x') \in U$ and $g(x') \in V$ for every $x' \in W_x$. Every element in $U$ is bigger than every element of $V$, and thus we can conclude that $W_x \subseteq W$.
+Let $x \in W$, that is $f(x) > g(x)$. Since $Y$ is a Hausdorff space, there are disjoint neighborhoods of $f(x)$ and $g(x)$, $U$ and $V$. Since $f$ and $g$ are continuous functions, we know that $f^{-1}(U)$ and $g^{-1}(V)$ are open and both of them contain $x$. The intersection, $W_x = f^{-1}(U) \cap g^{-1}(V)$, will be open and nonempty, and we know that $f(x') \in U$ and $g(x') \in V$ for every $x' \in W_x$. Every element in $U$ is bigger than every element in $V$, and thus we can conclude that $W_x \subseteq W$.
 \subsection*{Proving continuity}
 It is easy to see that the definition of $h$ is equivalent to this one.
 \begin{equation*}
@@ -45,7 +45,7 @@ It is easy to see that the definition of $h$ is equivalent to this one.
         \end{array}
     \right.
 \end{equation*}
-We can now check that all conditions of the pasting lemma are satified.
+We can now check that all conditions of the pasting lemma are satisfied.
 \begin{gather*}
     \text{$A$ and $B$ are closed} \\
     X = A \cup B  \\
@@ -68,5 +68,5 @@ Given $\bm{a} \neq \bm{b}$, there is a $\beta$ such that $\bm{a}_\beta \neq \bm{
         X_\alpha & \text{if } \alpha \neq \beta
     \end{cases}
 \end{equation*}
-$U$ and $V$ are neighborhoods of $\bm{x}$ and $\bm{y}$, and they are disjoint in both the box topology and the product topology. Since we can find a separation between different points, we can conclude that $\prod X_\alpha$ is Hausdorff.
+$U$ and $V$ are neighborhoods of $\bm{a}$ and $\bm{b}$, and they are disjoint in both the box topology and the product topology. Since we can find a separation between different points, we can conclude that $\prod X_\alpha$ is Hausdorff.
 \end{document}
