@@ -2,6 +2,7 @@
 \usepackage{amsmath}
 \usepackage{bm}
 \usepackage{graphicx}
+\usepackage{tcolorbox}
 
 \title{Exercise 1}
 \author{Daniel Gallo}
@@ -10,15 +11,17 @@
 \begin{document}
 \maketitle
 \section*{18.8}
-Let $Y$ be an ordered set in the order topology. Let $f,\ g \colon X \rightarrow Y$ be continuous.
-\begin{enumerate}
+\begin{tcolorbox}[title=Statement]
+    Let $Y$ be an ordered set in the order topology. Let $f,\ g \colon X \rightarrow Y$ be continuous.
+    \begin{enumerate}
     \item Show that the set $\left\{x \mid f(x) \leq g(x)\right\}$ is closed in X.
     \item Let $h\colon X \rightarrow Y$ be the function
     \begin{equation*}
         h(x) = min\left\{f(x),\ g(x)\right\}
     \end{equation*}
     Show that $h$ is continuous.
-\end{enumerate}
+    \end{enumerate}
+\end{tcolorbox}
 \subsection*{Every order topology is Hausdorff}
 First of all, we will proof that $Y$ is indeed Hausdorff. Given two elements $a,\ b \in Y$ such that $a < b$, we can consider the following set.
 \begin{equation*}
@@ -54,8 +57,10 @@ We can now check that all conditions of the pasting lemma are satisfied.
 \end{gather*}
 Thus, we can conclude that $h$ is continuous.
 \section*{19.3}
-If each $X_\alpha$ is a Hausdorff space, then $\prod X_\alpha$ is a Hausdorff space in both the box and product topologies.
-\\
+\begin{tcolorbox}[title=Statement]
+    If each $X_\alpha$ is a Hausdorff space, then $\prod X_\alpha$ is a Hausdorff space in both the box and product topologies.
+\end{tcolorbox}
+\noindent
 Given $\bm{a} \neq \bm{b}$, there is a $\beta$ such that $\bm{a}_\beta \neq \bm{b}_\beta$. Since $X_\beta$ is Hausdorff, we can find $U_\beta$ and $V_\beta$, neighborhoods of $\bm{a}_\beta$ and $\bm{b}_\beta$, where $U_\beta \cap V_\beta = \emptyset$. Now, we can define $U = \prod{U_\alpha}$ and $V = \prod{V_\alpha}$ as follows:
 \begin{equation*}
     U_\alpha = \begin{cases}
