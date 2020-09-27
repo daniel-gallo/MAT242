@@ -1,0 +1,41 @@
+\documentclass{article}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{tcolorbox}
+
+\DeclarePairedDelimiter\abs{\lvert}{\rvert}%
+
+\title{Exercise 2}
+\author{Daniel Gallo}
+\date{October 2020}
+
+\begin{document}
+    \maketitle
+    \section*{21.11 - Standard facts about infinite series}
+    \begin{tcolorbox}[title=Exercise a]
+        Show that if $(s_n)$ is a bounded sequence of real numbers and $s_n \leq s_{n + 1}$ for each $n$, then $(s_n)$ converges.
+    \end{tcolorbox}
+    \noindent
+    The sequence $(s_n)$ will converge to $s = \sup\left\{s_n\right\}$, since for every $\epsilon > 0$ there exists $N$ such that $s_N > s - \epsilon$. If it didn't exist, $s - \epsilon$ would be an upper bound of $(s_n)$, which contradicts the definition of $s$. Since $(s_n)$ is increasing and $s$ is its supremum, $\forall n \geq N$ we have $\abs{s - s_n} < \epsilon$.
+    \begin{tcolorbox}[title=Exercise b]
+        Let $(a_n)$ be a sequence of real numbers and define
+        \begin{equation*}
+            s_n = \sum_{i=1}^n{a_i}
+        \end{equation*}
+        If $s_n \rightarrow s$, we say that the infinite series
+        \begin{equation*}
+            \sum_{i=1}^\infty{a_i}
+        \end{equation*}
+        converges to s. Show that if $\sum{a_i}$ converges to $s$ and $\sum{b_i}$ converges to $t$ then $\sum{ca_i + b_i}$ converges to $cs + t$.
+    \end{tcolorbox}
+    \noindent
+    Since $\sum{a_i}$ converges to $s$, and $\sum{b_i}$ converges to $t$, for every epsilon we can find $N$ such that for every $n \geq N$
+    \begin{equation*}
+        \abs*{s - \sum_{i=1}^n{a_i}} < \epsilon \qquad \text{and} \qquad \abs*{t - \sum_{i=1}^n{b_n}} < \epsilon
+    \end{equation*}
+    Now we will prove that $\sum{ca_i + b_i}$ converges to $cs + t$ by definition.
+    \begin{equation*}
+        \abs*{cs+t - \sum_{i=1}^n{\left(ca_i + b_i\right)}} = \abs*{c\left(s - \sum_{i=1}^n{a_i}\right) + \left(\sum_{i=1}^n{b_i}\right)} < \epsilon(1 + \abs{c})
+    \end{equation*}
+
+\end{document}
