@@ -3,6 +3,7 @@
 \usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
+\usepackage{graphicx}
 \usepackage[colorlinks=true, linkcolor=blue]{hyperref}
 
 \def\R{\mathbb{R}}
@@ -48,7 +49,7 @@
         Prove the \textbf{comparison test} for infinite series: If $\abs{a_i} \leq b_i$ for each $i$, and if the series $\sum{b_i}$ converges, then the series $\sum{a_i}$ converges.
     \end{tcolorbox}
     \noindent
-    First we'll proof that $\sum{\abs{a_i}}$ converges. It is clear that $\sum{\abs{a_i}}$ is bounded:
+    First we'll prove that $\sum{\abs{a_i}}$ converges. It is clear that $\sum{\abs{a_i}}$ is bounded:
     \begin{equation*}
         \sum_{i=1}^\infty{\abs{a_i}} \leq \sum_{i=1}^\infty{b_i} < \infty
     \end{equation*}
@@ -76,4 +77,30 @@
         &\leq \sum_{i=n+1}^\infty{\abs{M_i}} \rightarrow 0
     \end{align*}
     Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=n+1}^\infty{\abs{M_i}} < \epsilon$.
+    
+    \section*{26.8}
+    \begin{tcolorbox}[title=Statement]
+        Let $f\colon X \to Y$ and let $Y$ be compact Hausdorff. Then $f$ is continuous if and only if the \textbf{graph} of $f$,
+        \begin{equation*}
+            G_f = \{x \times f(x) \mid x \in X\}
+        \end{equation*}
+        is closed in $X \times Y$
+    \end{tcolorbox}
+    \noindent
+    First we'll prove that if $f$ is continuous, the graph is closed. 
+    \\
+    \begin{center}
+    \includegraphics[width=0.6\textwidth]{diagram.png}
+    \end{center}
+    As we usually do, we'll take $(x, y) \notin G_f$ and we'll prove that there is an open set that contains $(x, y)$ and is contained on the complement of $G_f$. Since $y \neq f(x)$ and $Y$ is Hausdorff we can find $V_1$ and $V_2$ disjoint neighborhoods of $y$ and $f(x)$, respectively. We now use the fact that $f$ is continuous to obtain $f^{-1}(V_2)$, an open subset of $X$. The open set we were looking for is $f^{-1}(V_2) \times V_1$, which is painted blue in the diagram. The only thing we still have to prove is that it doesn't intersect the graph. If $(a, f(a))$ were in $f^{-1}(V_2) \times V_1$, $f(a)$ would be in $V_1$ and $V_2$. This is not possible since we chose $V_1$ and $V_2$ disjoint.
+    \par
+    \noindent
+    \\
+    Now we'll prove that if the graph of $f$ is closed, $f$ is continuous. To do so, consider $V$ open in $Y$ and let's prove that $f^{-1}(V)$ is open in $X$. 
+    \begin{align*}
+        \overline{f^{-1}(V)} &= \{x \mid f(x) \notin V\} \\
+        &= \pi_1((x, f(x)) \mid f(x) \notin V) \\
+        &= \pi_1((X \times (Y - V)) \cap G_f)
+    \end{align*}
+    Consider $f(x) \in V$ (if $V$ was empty, its preimage would be empty as well). Since $X$ is closed (it's complement is the empty set, which is open) and $Y - V$ is closed too (it's complement is $V$, which is open), $X \times (Y - V)$ is closed as well. Because the intersection of closed sets is closed we get to the conclusion that $G_f \cap (X \cap (Y - V))$ is closed. Using now exercise 26.7, we get that $\pi_1(G_f \cap (X \cap (Y - V))) = \overline{f^{-1}(V)}$ is closed. Thus, $f^{-1}(V)$ is open, as we wanted.
 \end{document}
