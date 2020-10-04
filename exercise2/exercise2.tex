@@ -1,7 +1,11 @@
 \documentclass{article}
 \usepackage{amsmath}
+\usepackage{amssymb}
 \usepackage{mathtools}
 \usepackage{tcolorbox}
+\usepackage[colorlinks=true, linkcolor=blue]{hyperref}
+
+\def\R{\mathbb{R}}
 
 \DeclarePairedDelimiter\abs{\lvert}{\rvert}%
 
@@ -13,11 +17,13 @@
     \maketitle
     \section*{21.11 - Standard facts about infinite series}
     \begin{tcolorbox}[title=Exercise a]
+        \label{21.11a}
         Show that if $(s_n)$ is a bounded sequence of real numbers and $s_n \leq s_{n + 1}$ for each $n$, then $(s_n)$ converges.
     \end{tcolorbox}
     \noindent
     The sequence $(s_n)$ will converge to $s = \sup\left\{s_n\right\}$, since for every $\epsilon > 0$ there exists $N$ such that $s_N > s - \epsilon$. If it didn't exist, $s - \epsilon$ would be an upper bound of $(s_n)$, which contradicts the definition of $s$. Since $(s_n)$ is increasing and $s$ is its supremum, $\forall n \geq N$ we have $\abs{s - s_n} < \epsilon$.
     \begin{tcolorbox}[title=Exercise b]
+        \label{21.11b}
         Let $(a_n)$ be a sequence of real numbers and define
         \begin{equation*}
             s_n = \sum_{i=1}^n{a_i}
@@ -37,5 +43,37 @@
     \begin{equation*}
         \abs*{cs+t - \sum_{i=1}^n{\left(ca_i + b_i\right)}} = \abs*{c\left(s - \sum_{i=1}^n{a_i}\right) + \left(\sum_{i=1}^n{b_i}\right)} < \epsilon(1 + \abs{c})
     \end{equation*}
-
+    \begin{tcolorbox}[title=Exercise c]
+        \label{21.11c}
+        Prove the comparison test for infinite series: If $\abs{a_i} \leq b_i$ for each $i$, and if the series $\sum{b_i}$ converges, then the series $\sum{a_i}$ converges.
+    \end{tcolorbox}
+    \noindent
+    First we'll proof that $\sum{\abs{a_i}}$ converges. It is clear that $\sum{\abs{a_i}}$ is bounded:
+    \begin{equation*}
+        \sum_{i=1}^\infty{\abs{a_i}} \leq \sum_{i=1}^\infty{b_i} < \infty
+    \end{equation*}
+    It is also a monotonic sequence, since $\abs{a_i} \geq 0$, so we can conclude by \hyperref[21.11a]{a} that $\sum{\abs{a_i}}$ converges. Using a similar reasoning we can prove that $\sum{\abs{a_i} + a_i}$ converges. 
+    \begin{equation*}
+        -\abs{a_i} \leq a_i \leq \abs{a_i} \quad \Rightarrow \quad 0 \leq \abs{a_i} + a_i \leq 2\abs{a_i}
+    \end{equation*}
+    $\sum{\abs{a_i} + a_i}$ is increasing (each term is greater or equal to zero) and the infinite sum is bounded by $2\sum{\abs{a_i}}$, which is finite. Thus, we conclude that $\sum{\abs{a_i} + a_i}$ converges. Now we just have to use \hyperref[21.11b]{b} to show that $\sum{(-1)\abs{a_i} + \abs{a_i} + a_i} = \sum{a_i}$ converges. 
+    \begin{tcolorbox}[title=Exercise d]
+        Given a sequence of functions $f_n \colon X \to \R$ let
+        \begin{equation*}
+            s_n(x) = \sum_{i=1}^n{f_i(x)}
+        \end{equation*}
+        Prove the Weierstrass M-test for uniform convergence: If $\abs{f_i(x)} \leq M_i$ for all $x \in X$ and all $i$, and if the series $\sum{M_i}$ converges, then the sequence $(s_n)$ converges uniformly to a function s.
+    \end{tcolorbox}
+    \noindent
+    We want to show that for every $\epsilon$ there exists a $N$ such that for every $n > N$, the following holds:
+    \begin{equation*}
+        \abs{s(x) - s_n(x)} < \epsilon \quad \forall x \in X
+    \end{equation*}
+    \begin{align*}
+        \abs{s(x) - s_n(x)} &= \abs*{\sum_{i=1}^\infty{f_i(x)} - \sum_{i=n}^\infty{f_i(x)}} \\
+        &= \abs*{\sum_{i=n+1}^\infty{f_i(x)}} \\
+        &\leq \sum_{i=n+1}^\infty{\abs{f_i(x)}} & \text{by the triangle inequality} \\
+        &\leq \sum_{i=n+1}^\infty{\abs{M_i}} \rightarrow 0
+    \end{align*}
+    Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=n+1}^\infty{\abs{M_i}} < \epsilon$.
 \end{document}
