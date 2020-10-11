@@ -78,6 +78,19 @@
     \end{align*}
     Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=n+1}^\infty{\abs{M_i}} < \epsilon$.
     
+    \section*{26.7}
+    \begin{tcolorbox}[title=Statement]
+        If $Y$ is compact, then the projection $\pi_1\colon X \times Y \to X$ is a closed map.
+    \end{tcolorbox}
+    \noindent
+    Let $C$ be a closed map in $X \times Y$. We want to prove that $\pi_1(C)$ is closed. As usually, we will show that $X - \pi_1(C)$ is an open set in $X$ saying that for every $x \in X - \pi_1(C)$ there exists a neighborhood $U$ such that $U \subset X - \pi_1(C)$. 
+    \\
+    Let $x \in X - \pi_1(C)$. By definition, we know that the line $\{(x, y) \mid y \in Y\}$ does not intersect $C$. Because of that, and taking into account that $C$ is closed, for every $y$ we can consider neighborhoods that won't intersect $C$ of the form $U_y \times V_y$. Since $Y$ is compact and $V_y$ covers $Y$, we can extract a finite subcovering $\{V_1, ..., V_n\}$. Let $U$ be defined as follows:
+    \begin{equation*}
+        U = \bigcap_{i=1}^{n}{U_i}
+    \end{equation*}
+    $U$ is an open set (finite intersection of sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists a neighborhood containing $(x', y')$ separating in from $C$.
+    
     \section*{26.8}
     \begin{tcolorbox}[title=Statement]
         Let $f\colon X \to Y$ and let $Y$ be compact Hausdorff. Then $f$ is continuous if and only if the \textbf{graph} of $f$,
@@ -88,7 +101,6 @@
     \end{tcolorbox}
     \noindent
     First we'll prove that if $f$ is continuous, the graph is closed. 
-    \\
     \begin{center}
     \includegraphics[width=0.6\textwidth]{diagram.png}
     \end{center}
@@ -102,5 +114,5 @@
         &= \pi_1((x, f(x)) \mid f(x) \notin V) \\
         &= \pi_1((X \times (Y - V)) \cap G_f)
     \end{align*}
-    Consider $f(x) \in V$ (if $V$ was empty, its preimage would be empty as well). Since $X$ is closed (it's complement is the empty set, which is open) and $Y - V$ is closed too (it's complement is $V$, which is open), $X \times (Y - V)$ is closed as well. Because the intersection of closed sets is closed we get to the conclusion that $G_f \cap (X \cap (Y - V))$ is closed. Using now exercise 26.7, we get that $\pi_1(G_f \cap (X \cap (Y - V))) = \overline{f^{-1}(V)}$ is closed. Thus, $f^{-1}(V)$ is open, as we wanted.
+    Consider $f(x) \in V$ (if $V$ was empty, its preimage would be empty as well). Since $X$ is closed (it's complement is the empty set, which is open) and $Y - V$ is closed too (it's complement is $V$, which is open), $X \times (Y - V)$ is closed as well. Because the intersection of closed sets is closed we get to the conclusion that $G_f \cap (X \cap (Y - V))$ is closed. Using now exercise 26.7, we get that $\pi_1(G_f \cap (X \cap (Y - V))) = \overline{f^{-1}(V)}$ is closed. Thus, $f^{-1}(V)$ is open, as we wanted. 
 \end{document}
