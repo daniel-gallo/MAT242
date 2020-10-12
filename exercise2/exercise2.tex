@@ -84,12 +84,14 @@
     \end{tcolorbox}
     \noindent
     Let $C$ be a closed map in $X \times Y$. We want to prove that $\pi_1(C)$ is closed. As usually, we will show that $X - \pi_1(C)$ is an open set in $X$ saying that for every $x \in X - \pi_1(C)$ there exists a neighborhood $U$ such that $U \subset X - \pi_1(C)$. 
-    \\
+    \begin{center}
+        \includegraphics[width=0.6\textwidth]{diagram1.png}
+    \end{center}
     Let $x \in X - \pi_1(C)$. By definition, we know that the line $\{(x, y) \mid y \in Y\}$ does not intersect $C$. Because of that, and taking into account that $C$ is closed, for every $y$ we can consider neighborhoods that won't intersect $C$ of the form $U_y \times V_y$. Since $Y$ is compact and $V_y$ covers $Y$, we can extract a finite subcovering $\{V_1, ..., V_n\}$. Let $U$ be defined as follows:
     \begin{equation*}
         U = \bigcap_{i=1}^{n}{U_i}
     \end{equation*}
-    $U$ is an open set (finite intersection of sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists a neighborhood containing $(x', y')$ separating in from $C$.
+    $U$ is an open set (finite intersection of open sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists a neighborhood containing $(x', y')$ separating it from $C$.
     
     \section*{26.8}
     \begin{tcolorbox}[title=Statement]
@@ -102,7 +104,7 @@
     \noindent
     First we'll prove that if $f$ is continuous, the graph is closed. 
     \begin{center}
-    \includegraphics[width=0.6\textwidth]{diagram.png}
+        \includegraphics[width=0.6\textwidth]{diagram2.png}
     \end{center}
     As we usually do, we'll take $(x, y) \notin G_f$ and we'll prove that there is an open set that contains $(x, y)$ and is contained on the complement of $G_f$. Since $y \neq f(x)$ and $Y$ is Hausdorff we can find $V_1$ and $V_2$ disjoint neighborhoods of $y$ and $f(x)$, respectively. We now use the fact that $f$ is continuous to obtain $f^{-1}(V_2)$, an open subset of $X$. The open set we were looking for is $f^{-1}(V_2) \times V_1$, which is painted blue in the diagram. The only thing we still have to prove is that it doesn't intersect the graph. If $(a, f(a))$ were in $f^{-1}(V_2) \times V_1$, $f(a)$ would be in $V_1$ and $V_2$. This is not possible since we chose $V_1$ and $V_2$ disjoint.
     \par
