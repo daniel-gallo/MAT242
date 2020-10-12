@@ -42,7 +42,7 @@
     \end{equation*}
     Now we will prove that $\sum{ca_i + b_i}$ converges to $cs + t$ by definition.
     \begin{equation*}
-        \abs*{cs+t - \sum_{i=1}^n{\left(ca_i + b_i\right)}} = \abs*{c\left(s - \sum_{i=1}^n{a_i}\right) + \left(\sum_{i=1}^n{b_i}\right)} < \epsilon(1 + \abs{c})
+        \abs*{cs+t - \sum_{i=1}^n{\left(ca_i + b_i\right)}} = \abs*{c\left(s - \sum_{i=1}^n{a_i}\right) + \left(t - \sum_{i=1}^n{b_i}\right)} < \epsilon(1 + \abs{c})
     \end{equation*}
     \begin{tcolorbox}[title=Exercise c]
         \label{21.11c}
@@ -74,9 +74,10 @@
         \abs{s(x) - s_n(x)} &= \abs*{\sum_{i=1}^\infty{f_i(x)} - \sum_{i=n}^\infty{f_i(x)}} \\
         &= \abs*{\sum_{i=n+1}^\infty{f_i(x)}} \\
         &\leq \sum_{i=n+1}^\infty{\abs{f_i(x)}} & \text{by the triangle inequality} \\
-        &\leq \sum_{i=n+1}^\infty{\abs{M_i}} \rightarrow 0
+        &\leq \sum_{i=N}^\infty{\abs{f_i(x)}} & n > N \\
+        &\leq \sum_{i=N}^\infty{\abs{M_i}} \rightarrow 0
     \end{align*}
-    Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=n+1}^\infty{\abs{M_i}} < \epsilon$.
+    Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=N}^\infty{\abs{M_i}} < \epsilon$.
     
     \section*{26.7}
     \begin{tcolorbox}[title=Statement]
@@ -91,7 +92,7 @@
     \begin{equation*}
         U = \bigcap_{i=1}^{n}{U_i}
     \end{equation*}
-    $U$ is an open set (finite intersection of open sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists a neighborhood containing $(x', y')$ separating it from $C$.
+    $U$ is an open set (finite intersection of open sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists an open set containing $(x', y')$ separating it from $C$.
     
     \section*{26.8}
     \begin{tcolorbox}[title=Statement]
@@ -112,9 +113,9 @@
     \\
     Now we'll prove that if the graph of $f$ is closed, $f$ is continuous. To do so, consider $V$ open in $Y$ and let's prove that $f^{-1}(V)$ is open in $X$. 
     \begin{align*}
-        \overline{f^{-1}(V)} &= \{x \mid f(x) \notin V\} \\
+        X - f^{-1}(V) &= \{x \mid f(x) \notin V\} \\
         &= \pi_1((x, f(x)) \mid f(x) \notin V) \\
         &= \pi_1((X \times (Y - V)) \cap G_f)
     \end{align*}
-    Consider $f(x) \in V$ (if $V$ was empty, its preimage would be empty as well). Since $X$ is closed (it's complement is the empty set, which is open) and $Y - V$ is closed too (it's complement is $V$, which is open), $X \times (Y - V)$ is closed as well. Because the intersection of closed sets is closed we get to the conclusion that $G_f \cap (X \cap (Y - V))$ is closed. Using now exercise 26.7, we get that $\pi_1(G_f \cap (X \cap (Y - V))) = \overline{f^{-1}(V)}$ is closed. Thus, $f^{-1}(V)$ is open, as we wanted. 
+    Consider $f(x) \in V$ (if $V$ was empty, its preimage would be empty as well). Since $X$ is closed (its complement is the empty set, which is open) and $Y - V$ is closed too (it's complement is $V$, which is open), $X \times (Y - V)$ is closed as well. Because the intersection of closed sets is closed we get to the conclusion that $G_f \cap (X \cap (Y - V))$ is closed. Using now exercise 26.7, we get that $\pi_1(G_f \cap (X \cap (Y - V))) = X - f^{-1}(V)$ is closed. Thus, $f^{-1}(V)$ is open, as we wanted. 
 \end{document}
