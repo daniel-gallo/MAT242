@@ -33,10 +33,10 @@
         \begin{equation*}
             \sum_{i=1}^\infty{a_i}
         \end{equation*}
-        converges to s. Show that if $\sum{a_i}$ converges to $s$ and $\sum{b_i}$ converges to $t$ then $\sum{ca_i + b_i}$ converges to $cs + t$.
+        converges to s. Show that if $\sum{a_i}$ converges to $s$ and $\sum{b_i}$ converges to $t$ then $\sum{(ca_i + b_i)}$ converges to $cs + t$.
     \end{tcolorbox}
     \noindent
-    Since $\sum{a_i}$ converges to $s$, and $\sum{b_i}$ converges to $t$, for every epsilon we can find $N$ such that for every $n \geq N$
+    Since $\sum{a_i}$ converges to $s$, and $\sum{b_i}$ converges to $t$, for every epsilon we can find $N$ (choose the largest between the two $N's$ obtained by definition) such that for every $n \geq N$
     \begin{equation*}
         \abs*{s - \sum_{i=1}^n{a_i}} < \epsilon \qquad \text{and} \qquad \abs*{t - \sum_{i=1}^n{b_n}} < \epsilon
     \end{equation*}
@@ -44,6 +44,7 @@
     \begin{equation*}
         \abs*{cs+t - \sum_{i=1}^n{\left(ca_i + b_i\right)}} = \abs*{c\left(s - \sum_{i=1}^n{a_i}\right) + \left(t - \sum_{i=1}^n{b_i}\right)} < \epsilon(1 + \abs{c})
     \end{equation*}
+    We can make $\epsilon(1 + \abs{c})$ arbitrarily small.
     \begin{tcolorbox}[title=Exercise c]
         \label{21.11c}
         Prove the \textbf{comparison test} for infinite series: If $\abs{a_i} \leq b_i$ for each $i$, and if the series $\sum{b_i}$ converges, then the series $\sum{a_i}$ converges.
@@ -57,7 +58,7 @@
     \begin{equation*}
         -\abs{a_i} \leq a_i \leq \abs{a_i} \quad \Rightarrow \quad 0 \leq \abs{a_i} + a_i \leq 2\abs{a_i}
     \end{equation*}
-    $\sum{\abs{a_i} + a_i}$ is increasing (each term is greater or equal to zero) and the infinite sum is bounded by $2\sum{\abs{a_i}}$, which is finite. Thus, we conclude that $\sum{\abs{a_i} + a_i}$ converges. Now we just have to use \hyperref[21.11b]{b} to show that $\sum{(-1)\abs{a_i} + \abs{a_i} + a_i} = \sum{a_i}$ converges. 
+    $\sum{\abs{a_i} + a_i}$ is increasing (each term is greater or equal to zero) and the infinite sum is bounded by $2\sum{\abs{a_i}}$, which is finite. Thus, we conclude that $\sum{\abs{a_i} + a_i}$ converges. Now we just have to use \hyperref[21.11b]{b} to see that $\sum{((-1)\abs{a_i} + (\abs{a_i} + a_i))} = \sum{a_i}$ converges. 
     \begin{tcolorbox}[title=Exercise d]
         Given a sequence of functions $f_n \colon X \to \R$ let
         \begin{equation*}
@@ -66,7 +67,7 @@
         Prove the \textbf{Weierstrass M-test} for uniform convergence: If $\abs{f_i(x)} \leq M_i$ for all $x \in X$ and all $i$, and if the series $\sum{M_i}$ converges, then the sequence $(s_n)$ converges uniformly to a function s.
     \end{tcolorbox}
     \noindent
-    We want to show that for every $\epsilon$ there exists a $N$ such that for every $n > N$, the following holds:
+    We want to show that for every $\epsilon$ there exists $N$ such that for every $n \geq N$, the following holds:
     \begin{equation*}
         \abs{s(x) - s_n(x)} < \epsilon \quad \forall x \in X
     \end{equation*}
@@ -74,7 +75,7 @@
         \abs{s(x) - s_n(x)} &= \abs*{\sum_{i=1}^\infty{f_i(x)} - \sum_{i=n}^\infty{f_i(x)}} \\
         &= \abs*{\sum_{i=n+1}^\infty{f_i(x)}} \\
         &\leq \sum_{i=n+1}^\infty{\abs{f_i(x)}} & \text{by the triangle inequality} \\
-        &\leq \sum_{i=N}^\infty{\abs{f_i(x)}} & n > N \\
+        &\leq \sum_{i=N}^\infty{\abs{f_i(x)}} & n \geq N \\
         &\leq \sum_{i=N}^\infty{\abs{M_i}} \rightarrow 0
     \end{align*}
     Since $\sum{M_i}$ converges, we can always choose $N$ big enough so $\sum_{i=N}^\infty{\abs{M_i}} < \epsilon$.
@@ -92,7 +93,7 @@
     \begin{equation*}
         U = \bigcap_{i=1}^{n}{U_i}
     \end{equation*}
-    $U$ is an open set (finite intersection of open sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists an open set containing $(x', y')$ separating it from $C$.
+    $U$ is an open set (finite intersection of open sets) that doesn't intersect $\pi_1(C)$. We will prove this by contradiction. Assume $x' \in \pi_1(C) \cap U$. Then, there exists $(x', y') \in C$. But since $x' \in U$, there exists an open set centered at the aforementioned line containing $(x', y')$ separating it from $C$. We have reached a contradiction.
     
     \section*{26.8}
     \begin{tcolorbox}[title=Statement]
